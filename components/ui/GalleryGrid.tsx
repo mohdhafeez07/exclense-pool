@@ -104,7 +104,7 @@ export default function GalleryGrid({
         whileInView="visible"
         viewport={viewportOnce}
         variants={staggerContainer}
-        className="columns-1 gap-4 sm:columns-2 sm:gap-5 lg:columns-3"
+        className="columns-2 gap-3 sm:gap-5 lg:columns-3"
       >
         {filtered.map((image, index) => (
           <motion.button
@@ -112,9 +112,10 @@ export default function GalleryGrid({
             type="button"
             variants={fadeUp}
             whileHover={{ y: -4 }}
+            whileTap={{ scale: 0.96 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             onClick={() => setLightboxIndex(index)}
-            className="group relative mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl shadow-[0_4px_24px_-8px_rgba(8,18,32,0.12)] ring-1 ring-navy/5 transition-shadow duration-500 hover:shadow-[0_24px_56px_-16px_rgba(8,18,32,0.24)] sm:mb-5"
+            className="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-2xl shadow-[0_4px_24px_-8px_rgba(8,18,32,0.12)] ring-1 ring-navy/5 transition-shadow duration-500 hover:shadow-[0_24px_56px_-16px_rgba(8,18,32,0.24)] sm:mb-5"
           >
             <div
               className={cn(

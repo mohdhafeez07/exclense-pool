@@ -30,10 +30,15 @@ export default function ProjectsPage() {
             align="center"
             className="section-header"
           />
-          <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             <ProjectCard {...PROJECTS[0]} index={0} featured />
-            {PROJECTS.slice(1).map((project, i) => (
-              <ProjectCard key={project.id} {...project} index={i + 1} />
+            {PROJECTS.slice(1).map((project, i, arr) => (
+              <ProjectCard
+                key={project.id}
+                {...project}
+                index={i + 1}
+                spanFull={arr.length % 2 === 1 && i === arr.length - 1}
+              />
             ))}
           </div>
         </div>

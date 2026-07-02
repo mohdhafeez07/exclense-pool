@@ -20,7 +20,7 @@ import {
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 export default function HomePage() {
-  const featuredProjects = PROJECTS.slice(0, 4);
+  const featuredProjects = PROJECTS.slice(0, 3);
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function HomePage() {
               <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_64px_-20px_rgba(8,18,32,0.18)] sm:rounded-3xl">
                   <Image
-                    src={IMAGES.about}
+                    src={IMAGES.villa}
                     alt="Luxury estate with swimming pool"
                     fill
                     className="object-cover object-center"
@@ -107,13 +107,14 @@ export default function HomePage() {
             align="center"
             className="section-header"
           />
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
-            {SERVICES.slice(0, 3).map((service, i) => (
+          <div className="grid grid-cols-2 gap-3 sm:gap-7 lg:grid-cols-4 lg:gap-6">
+            {SERVICES.slice(0, 4).map((service, i) => (
               <ServiceCard
                 key={service.id}
                 title={service.title}
                 description={service.description}
                 image={service.image}
+                features={service.features}
                 index={i}
               />
             ))}
@@ -142,7 +143,7 @@ export default function HomePage() {
             align="center"
             className="section-header"
           />
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             <ProjectCard {...featuredProjects[0]} index={0} featured />
             {featuredProjects.slice(1).map((project, i) => (
               <ProjectCard key={project.id} {...project} index={i + 1} />
@@ -234,7 +235,7 @@ export default function HomePage() {
                 <AnimateIn key={src} delay={i * 0.08}>
                   <Link
                     href="/gallery"
-                    className="group relative block aspect-[3/4] overflow-hidden rounded-2xl shadow-[0_4px_24px_-8px_rgba(8,18,32,0.12)] ring-1 ring-navy/5 transition-shadow duration-500 hover:shadow-[0_20px_48px_-14px_rgba(8,18,32,0.22)] sm:aspect-square"
+                    className="group relative block aspect-[3/4] overflow-hidden rounded-2xl shadow-[0_4px_24px_-8px_rgba(8,18,32,0.12)] ring-1 ring-navy/5 transition-all duration-500 hover:shadow-[0_20px_48px_-14px_rgba(8,18,32,0.22)] active:scale-95 sm:aspect-square"
                   >
                     <Image
                       src={src}
@@ -247,9 +248,9 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-navy/0 transition-all duration-500 group-hover:bg-navy/35" />
                     <span className="corner-frame tl" />
                     <span className="corner-frame br" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/75 to-transparent p-5 opacity-0 transition-opacity duration-400 group-hover:opacity-100">
-                      <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-white">
-                        <span className="h-px w-3 bg-gold-light" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-3 opacity-100 transition-opacity duration-400 sm:p-5 sm:opacity-0 sm:group-hover:opacity-100">
+                      <span className="inline-flex items-center gap-1.5 text-[8px] font-semibold uppercase tracking-widest text-white sm:gap-2 sm:text-[10px]">
+                        <span className="h-px w-2.5 bg-gold-light sm:w-3" />
                         View Gallery
                       </span>
                     </div>

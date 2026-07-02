@@ -101,7 +101,6 @@ export function HomeHero() {
   }, [next]);
 
   useEffect(() => {
-    setProgress(0);
     const start = Date.now();
     const tick = setInterval(() => {
       const elapsed = Date.now() - start;

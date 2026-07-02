@@ -32,7 +32,7 @@ export default function ServicesPage() {
             align="center"
             className="section-header"
           />
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
+          <div className="grid grid-cols-2 gap-3 sm:gap-7 lg:grid-cols-3 lg:gap-8">
             {SERVICES.map((service, i) => (
               <ServiceCard
                 key={service.id}
@@ -56,7 +56,7 @@ export default function ServicesPage() {
             light
             className="section-header"
           />
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-4 md:gap-6">
             {[
               {
                 step: "01",

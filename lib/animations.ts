@@ -64,3 +64,15 @@ export function fadeUpWithDelay(delay: number): Variants {
     },
   };
 }
+
+export function cardReveal(delay: number): Variants {
+  return {
+    hidden: { opacity: 0, y: 28, scale: 0.94 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.65, ease: luxuryEase, delay },
+    },
+  };
+}
